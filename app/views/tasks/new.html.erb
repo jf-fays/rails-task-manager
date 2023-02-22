@@ -1,0 +1,10 @@
+<h1>New task</h1>
+
+<%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "write new task here" %>
+  <%= f.label :details %>
+  <%= f.text_field :details, placeholder: "write new detail here"%>
+  <%= f.submit %>
+<% end %>
+<div class="btn-action"><%= link_to 'BACK TO LIST', root_path %></div>

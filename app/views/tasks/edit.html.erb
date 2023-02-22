@@ -1,0 +1,12 @@
+<h1>Edit task</h1>
+<%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "edit new task here" %>
+  <%= f.label :details %>
+  <%= f.text_field :details, placeholder: "edit new detail here"%>
+  <%= f.check_box :completed %>
+  <%= f.label :completed, "Completed ?" %>
+  <%= f.submit %>
+<% end %>
+
+<div class="btn-action"><%= link_to 'BACK TO TASK', task_path %></div>

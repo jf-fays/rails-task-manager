@@ -1,0 +1,26 @@
+<h2>My task : <%= @task.title %></h2>
+<div class="show">
+  <p> <b>Details</b> : <%= @task.details %></p>
+  <% if @task.completed == true %>
+          <p><input class="form-check-input" type="checkbox" value="" id="flexCheckCheked" checked>
+          <label class="form-check-label" for="flexCheckCheked">
+          <%= 'This task is completed' %>
+          </label></p>
+          <% else %>
+          <p><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+          <%= 'This task is not complete yet' %>
+          </label></p>
+        <% end %>
+</div>
+<div class="container-btn">
+<div class="btn-action"><%= link_to 'Edit task', task_edit_path %></div>
+
+<div ><%= link_to task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+  <i class="fa-solid fa-trash"></i>
+  <% end %>
+</div>
+
+<div class="btn-action"><%= link_to 'BACK TO LIST', root_path %></div>
+</div>
